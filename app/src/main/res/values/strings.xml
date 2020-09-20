@@ -12,5 +12,7 @@
 
 
 
-    <string name="explore">Explore</string>
+    <string name="explore_title">Explore</string>
+    <string name="hosts_title">Hosts</string>
+    <string name="viewAll">VIEW ALL</string>
 </resources>

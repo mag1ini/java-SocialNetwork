@@ -2,13 +2,108 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/explore"
-        android:textStyle="bold"
-        android:textSize="40sp">
+    android:layout_height="match_parent"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp">
 
-    </TextView>
+    <RelativeLayout
+        android:id="@+id/mainTitle_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorAqua">
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/explore_title"
+            android:textStyle="bold"
+            android:textColor="@color/colorTitle"
+            android:textSize="40sp">
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/hostsTitle_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@id/mainTitle_layout"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/hosts_tv"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hosts_title"
+            android:textColor="@color/colorTitle"
+            android:textSize="20sp"
+            android:textStyle="bold">
+        </TextView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:text="@string/viewAll"
+            android:textColor="@color/colorTitleBtn"
+            android:textSize="18sp"
+            android:background="@android:color/transparent"/>
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="147dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@id/hostsTitle_layout"
+        android:layout_marginTop="30dp">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rowCount="3"
+            android:columnCount="5">
+            <Button android:text="1" />
+            <Button android:text="2" />
+            <Button android:text="3" />
+            <Button android:text="4" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="7" />
+        </GridLayout>
+    </HorizontalScrollView>
+
+
+
+
+
+
+
 </RelativeLayout>
