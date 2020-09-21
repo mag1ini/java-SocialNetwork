@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -41,6 +42,7 @@
             android:textStyle="bold">
         </TextView>
         <Button
+            android:id="@+id/hosts_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -52,54 +54,246 @@
     </RelativeLayout>
 
     <HorizontalScrollView
+        android:id="@+id/hosts_hs"
         android:layout_width="match_parent"
-        android:layout_height="147dp"
+        android:layout_height="220dp"
         android:background="@color/colorPrimaryDark"
         android:layout_below="@id/hostsTitle_layout"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="3dp">
         <GridLayout
+            android:id="@+id/hosts_gl"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:rowCount="3"
-            android:columnCount="5">
-            <Button android:text="1" />
-            <Button android:text="2" />
-            <Button android:text="3" />
-            <Button android:text="4" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
-            <Button android:text="5" />
-            <Button android:text="6" />
-            <Button android:text="7" />
+            android:orientation="vertical"
+            android:columnCount="5"
+            android:rowCount="3">
+
+            <Button
+                android:id="@+id/user_sample1"
+                android:background="@drawable/people1"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample2"
+                android:background="@drawable/people2"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample4"
+                android:background="@drawable/people4"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample3"
+                android:background="@drawable/people3"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample5"
+                android:background="@drawable/people5"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample6"
+                android:background="@drawable/people6"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample7"
+                android:background="@drawable/people7"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample8"
+                android:background="@drawable/people8"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample9"
+                android:background="@drawable/people9"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample10"
+                android:background="@drawable/people10"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+
+            <Button
+                android:id="@+id/user_sample11"
+                android:background="@drawable/people11"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample12"
+                android:background="@drawable/people12"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample13"
+                android:background="@drawable/people13"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample14"
+                android:background="@drawable/people14"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample15"
+                android:background="@drawable/people15"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample16"
+                android:background="@drawable/people16"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample17"
+                android:background="@drawable/people17"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample18"
+                android:background="@drawable/people18"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample19"
+                android:background="@drawable/people19"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample20"
+                android:background="@drawable/people20"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample21"
+                android:background="@drawable/people21"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample22"
+                android:background="@drawable/people22"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample23"
+                android:background="@drawable/people23"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample24"
+                android:background="@drawable/people24"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+            <Button
+                android:id="@+id/user_sample25"
+                android:background="@drawable/people25"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp">
+            </Button>
+
+
+
+
+
+
+
+
         </GridLayout>
     </HorizontalScrollView>
 
+    <TextView
+        android:id="@+id/gfd"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elegantTextHeight="true"
+        android:text="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        android:textColor="@color/colorTilda"
+        android:textSize="17sp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/hosts_hs"
+        android:textStyle="bold">
+    </TextView>
 
 
 

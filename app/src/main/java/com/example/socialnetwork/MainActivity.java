@@ -12,6 +12,10 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewParent;
+import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.HorizontalScrollView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SetGridLayout();
+
+    }
+
+    private void SetGridLayout() {
+
 
     }
 
