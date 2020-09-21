@@ -11,4 +11,7 @@
     <color name="colorCard">#0a5766</color>
     <color name="colorTitleCard">#fbfcfd</color>
     <color name="colorBtnCard">#277275</color>
+    <color name="colorFooter">#ffffff</color>
+    <color name="colorSilver">#cccccc</color>
+
 </resources>
