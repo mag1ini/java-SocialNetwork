@@ -15,4 +15,12 @@
     <string name="explore_title">Explore</string>
     <string name="hosts_title">Hosts</string>
     <string name="viewAll">VIEW ALL</string>
+    <string name="travellers_title">Travellers</string>
+    <string name="bookmarked_title">Bookmarked</string>
+    <string name="invites_title">You have 5 invites</string>
+    <string name="invites_body">
+        Our invite system helps keep the community curated.
+        So, use them wisely
+    </string>
+    <string name="invites_btn">SEE INVITES</string>
 </resources>
