@@ -17,9 +17,9 @@
     <string name="viewAll">VIEW ALL</string>
     <string name="travellers_title">Travellers</string>
     <string name="bookmarked_title">Bookmarked</string>
-    <string name="invites_title">You have 5 invites</string>
+    <string name="invites_title">You have\n5 invites</string>
     <string name="invites_body">
-        Our invite system helps keep the community curated.
+        Our invite system helps keep the\ncommunity curated.
         So, use them wisely
     </string>
     <string name="invites_btn">SEE INVITES</string>
