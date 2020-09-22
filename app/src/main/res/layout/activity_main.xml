@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_main1"
+    android:id="@+id/activity_full"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -35,6 +35,8 @@
                     android:textSize="40sp"
                     android:textStyle="bold" />
             </RelativeLayout>
+
+
             <!-- Hosts Title -->
             <RelativeLayout
                 android:id="@+id/hostsTitle_layout"
@@ -76,7 +78,7 @@
 <!--                android:background="@color/colorPrimaryDark">-->
 
                 <GridLayout
-
+                    android:id="@+id/hosts_gl"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:columnCount="5"
@@ -300,6 +302,8 @@
                 android:textColor="@color/colorTilda"
                 android:textSize="17sp"
                 android:textStyle="bold" />
+
+
             <!-- Travellers Title -->
             <RelativeLayout
                 android:id="@+id/travellersTitle_layout"
@@ -508,6 +512,8 @@
                 android:textColor="@color/colorTilda"
                 android:textSize="17sp"
                 android:textStyle="bold" />
+
+
             <!-- Bookmarked Title -->
             <RelativeLayout
                 android:id="@+id/bookmarkedTitle_layout"
@@ -565,6 +571,7 @@
                         android:background="@drawable/people8" />
                 </GridLayout>
             </HorizontalScrollView>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_cv"
@@ -632,9 +639,9 @@
                 <!--            </TextView>-->
             </androidx.cardview.widget.CardView>
 
-
         </RelativeLayout>
     </ScrollView>
+
 
     <!-- Footer -->
     <RelativeLayout
