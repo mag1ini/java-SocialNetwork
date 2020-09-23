@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_full"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -658,10 +660,11 @@
             android:layout_height="3dp"
             android:background="@color/colorSilver" />
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true">
+
             <Button
                 android:id="@+id/menu_btn"
                 android:layout_width="50dp"
@@ -669,24 +672,35 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="45dp"
-                android:background="@drawable/menu37" />
+                android:background="@drawable/menu37"
+                app:layout_constraintEnd_toStartOf="@+id/button3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_editor_absoluteX="10dp" />
 
             <Button
+                android:id="@+id/button3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="45dp"
                 android:layout_toRightOf="@+id/menu_btn"
-
-                android:background="@drawable/bag37" />
+                android:background="@drawable/bag37"
+                app:layout_constraintEnd_toStartOf="@+id/button4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/menu_btn"
+                app:layout_editor_absoluteX="50dp" />
 
             <Button
+                android:id="@+id/button4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="45dp"
                 android:layout_toLeftOf="@id/user_btn"
-                android:background="@drawable/msg37" />
+                android:background="@drawable/msg37"
+                app:layout_constraintEnd_toStartOf="@+id/user_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button3"
+                app:layout_editor_absoluteX="100dp" />
 
             <Button
                 android:id="@+id/user_btn"
@@ -695,8 +709,12 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="45dp"
-                android:background="@drawable/user37" />
-        </RelativeLayout>
+                android:background="@drawable/user37"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button4"
+                app:layout_editor_absoluteX="120dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </RelativeLayout>
