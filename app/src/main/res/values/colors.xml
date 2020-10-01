@@ -13,5 +13,6 @@
     <color name="colorBtnCard">#277275</color>
     <color name="colorFooter">#ffffff</color>
     <color name="colorSilver">#cccccc</color>
+    <color name="colorWhite">#fff</color>
 
 </resources>

@@ -3,6 +3,9 @@ package com.example.socialnetwork;
 import android.app.NativeActivity;
 import android.os.Bundle;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.socialnetwork.API.ApiUtils;
 import com.example.socialnetwork.API.UserApiService;
 import com.example.socialnetwork.Models.Data;
@@ -11,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,17 +30,23 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecycleViewAdapter adapter;
 
+    private CardView cardView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recycler);
+        cardView = findViewById(R.id.card_cv);
+
+
+
 
         apiGetUsers = ApiUtils.getAPIService();
 
-         int results = 20;
-         final int pagination = results/3;
+         int results = 30;
+         final int pagination = results/3 + 1;
 
         apiGetUsers.getUsers("picture",results)
                 .enqueue(new Callback<Data>() {
