@@ -52,12 +52,14 @@ public class MainActivity extends AppCompatActivity {
         hostsRecyclerView = findViewById(R.id.hosts_recycler);
         travellersRecyclerView = findViewById(R.id.travellers_recycler);
         bookmarkedRecyclerView = findViewById(R.id.bookmarked_recycler);
+
         hosts_hs = findViewById(R.id.hosts_hs);
+
         apiGetUsers = ApiUtils.getAPIService();
 
-         // Hosts
-        final int results1 = 9;
-        apiGetUsers.getUsers("picture",results1).enqueue(new Callback<Data>() {
+        // Hosts
+        final int hostsResults = 9;
+        apiGetUsers.getUsers("picture",hostsResults).enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
                 if(response.isSuccessful()) {
@@ -74,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Travellers
-        final int results2 = 49;
-        apiGetUsers.getUsers("picture",results2).enqueue(new Callback<Data>() {
+        final int travellersResults = 49;
+        apiGetUsers.getUsers("picture",travellersResults).enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
                 if(response.isSuccessful()) {
@@ -92,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Bookmarked
-        final int results3 = 3;
-        apiGetUsers.getUsers("picture",results3).enqueue(new Callback<Data>() {
+        final int bookmarkedResults = 3;
+        apiGetUsers.getUsers("picture",bookmarkedResults).enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
                 if(response.isSuccessful()) {
@@ -108,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
                 boolean isFail = true;
             }
         });
-
     }
 
     private void setUsers(Response<Data> response, RecyclerView recycler) {
@@ -126,9 +127,5 @@ public class MainActivity extends AppCompatActivity {
         int spanCols = (int) Math.ceil(amountResults/ (double) MAX_ROWS);
         return (spanCols < MAX_COLUMNS_IN_SCREEN)?
                 MAX_COLUMNS_IN_SCREEN : spanCols;
-
     }
-
-
-
 }
