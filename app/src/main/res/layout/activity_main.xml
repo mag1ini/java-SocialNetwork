@@ -76,17 +76,15 @@
                 android:id="@+id/hosts_hs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler"
+
+                <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hosts_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            </LinearLayout>
+              
+
             </HorizontalScrollView>
 
             <!--Tilda -->
@@ -138,166 +136,16 @@
             </RelativeLayout>
             <!-- List of Travellers  -->
             <HorizontalScrollView
+                android:layout_below="@id/travellersTitle_layout"
                 android:id="@+id/travellers_hs"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_below="@id/travellersTitle_layout"
-                android:layout_marginTop="3dp">
-<!--                android:background="@color/colorPrimaryDark">-->
+                android:layout_height="wrap_content">
 
-                <GridLayout
-                    android:id="@+id/travellers_gl"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/travellers_recycler"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:columnCount="5"
-                    android:orientation="vertical"
-                    android:rowCount="3">
+                    android:layout_height="wrap_content" />
 
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people8" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people9" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people10" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people11" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people12" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people13" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people14" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people15" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people16" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people17" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people18" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people19" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people20" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people21" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people22" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people23" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people24" />
-
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people25" />
-
-                </GridLayout>
             </HorizontalScrollView>
             <!--Tilda -->
             <TextView
@@ -348,29 +196,16 @@
             </RelativeLayout>
             <!-- List of Bookmarked  -->
             <HorizontalScrollView
+                android:layout_below="@id/bookmarkedTitle_layout"
                 android:id="@+id/bookmarked_hs"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_below="@id/bookmarkedTitle_layout"
-                android:layout_marginTop="3dp">
-<!--                android:background="@color/colorPrimaryDark">-->
+                android:layout_height="wrap_content">
 
-                <GridLayout
-                    android:id="@+id/bookmarked_gl"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bookmarked_recycler"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:columnCount="5"
-                    android:orientation="vertical"
-                    android:rowCount="3">
+                    android:layout_height="wrap_content" />
 
-                    <Button
-
-                        android:layout_width="70dp"
-                        android:layout_height="60dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/people8" />
-                </GridLayout>
             </HorizontalScrollView>
 
 

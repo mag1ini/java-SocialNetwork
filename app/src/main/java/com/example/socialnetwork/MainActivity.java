@@ -2,6 +2,7 @@ package com.example.socialnetwork;
 
 import android.app.NativeActivity;
 import android.os.Bundle;
+import android.widget.GridView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -18,6 +19,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -27,19 +29,23 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     UserApiService apiGetUsers;
-    private RecyclerView recyclerView;
+    private RecyclerView hostsRecyclerView;
+    private RecyclerView travellersRecyclerView;
+    private RecyclerView bookmarkedRecyclerView;
+
     private RecycleViewAdapter adapter;
 
-    private CardView cardView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        recyclerView = findViewById(R.id.recycler);
-        cardView = findViewById(R.id.card_cv);
 
+        hostsRecyclerView = findViewById(R.id.hosts_recycler);
+        travellersRecyclerView = findViewById(R.id.travellers_recycler);
+        bookmarkedRecyclerView = findViewById(R.id.bookmarked_recycler);
 
 
 
@@ -48,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
          int results = 30;
          final int pagination = results/3 + 1;
 
+         // Hosts
         apiGetUsers.getUsers("picture",results)
                 .enqueue(new Callback<Data>() {
             @Override
@@ -58,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
 
                 double spanCount = Math.floor(pagination);
                 if(response.isSuccessful()) {
-                    recyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, (int)spanCount));
+                    hostsRecyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, (int)spanCount));
                     adapter = new RecycleViewAdapter(MainActivity.this, result);
-                    recyclerView.setAdapter(adapter);
+                    hostsRecyclerView.setAdapter(adapter);
                 }
                 int a = 5;
             }
@@ -68,6 +75,46 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Data> call, Throwable t) {
                 int a = 5;
+            }
+        });
+
+        // Travellers
+        apiGetUsers.getUsers("picture",30).enqueue(new Callback<Data>() {
+            @Override
+            public void onResponse(Call<Data> call, Response<Data> response) {
+                Data body = response.body();
+                List<Result> result = body.getResults();
+
+                if (response.isSuccessful()) {
+                    travellersRecyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this,10));
+                    adapter = new RecycleViewAdapter(MainActivity.this, result);
+                    travellersRecyclerView.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Data> call, Throwable t) {
+
+            }
+        });
+
+        // Bookmarked
+        apiGetUsers.getUsers("picture",5).enqueue(new Callback<Data>() {
+            @Override
+            public void onResponse(Call<Data> call, Response<Data> response) {
+                Data body = response.body();
+                List<Result> result = body.getResults();
+                if (response.isSuccessful()) {
+                    bookmarkedRecyclerView.setLayoutManager(new GridLayoutManager( MainActivity.this, 5));
+                    adapter = new RecycleViewAdapter(MainActivity.this,result);
+                    bookmarkedRecyclerView.setAdapter(adapter);
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Data> call, Throwable t) {
+
             }
         });
 
