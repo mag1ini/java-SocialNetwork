@@ -1,8 +1,12 @@
 package com.example.socialnetwork;
 
 import android.app.NativeActivity;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Display;
 import android.widget.GridView;
+import android.widget.HorizontalScrollView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
@@ -29,13 +33,15 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     UserApiService apiGetUsers;
+    private HorizontalScrollView hosts_hs;
     private RecyclerView hostsRecyclerView;
     private RecyclerView travellersRecyclerView;
     private RecyclerView bookmarkedRecyclerView;
 
     private RecycleViewAdapter adapter;
 
-
+    final int MAX_ROWS = 3;
+    final int MAX_COLUMNS_IN_SCREEN = 5; //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,83 +52,83 @@ public class MainActivity extends AppCompatActivity {
         hostsRecyclerView = findViewById(R.id.hosts_recycler);
         travellersRecyclerView = findViewById(R.id.travellers_recycler);
         bookmarkedRecyclerView = findViewById(R.id.bookmarked_recycler);
-
-
-
+        hosts_hs = findViewById(R.id.hosts_hs);
         apiGetUsers = ApiUtils.getAPIService();
 
-         int results = 30;
-         final int pagination = results/3 + 1;
-
          // Hosts
-        apiGetUsers.getUsers("picture",results)
-                .enqueue(new Callback<Data>() {
+        final int results1 = 9;
+        apiGetUsers.getUsers("picture",results1).enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
-                Data body =  response.body();
-                List<Result> result = body.getResults();
-
-
-                double spanCount = Math.floor(pagination);
                 if(response.isSuccessful()) {
-                    hostsRecyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this, (int)spanCount));
-                    adapter = new RecycleViewAdapter(MainActivity.this, result);
-                    hostsRecyclerView.setAdapter(adapter);
+                    setUsers(response, hostsRecyclerView);
                 }
-                int a = 5;
+                else{
+                    Log.println(Log.ERROR,"error","error hosts");
+                }
             }
-
             @Override
             public void onFailure(Call<Data> call, Throwable t) {
-                int a = 5;
+                boolean isFail = true;
             }
         });
 
         // Travellers
-        apiGetUsers.getUsers("picture",30).enqueue(new Callback<Data>() {
+        final int results2 = 49;
+        apiGetUsers.getUsers("picture",results2).enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
-                Data body = response.body();
-                List<Result> result = body.getResults();
-
-                if (response.isSuccessful()) {
-                    travellersRecyclerView.setLayoutManager(new GridLayoutManager(MainActivity.this,10));
-                    adapter = new RecycleViewAdapter(MainActivity.this, result);
-                    travellersRecyclerView.setAdapter(adapter);
+                if(response.isSuccessful()) {
+                    setUsers(response, travellersRecyclerView);
+                }
+                else{
+                    Log.println(Log.ERROR,"error","error travellers");
                 }
             }
-
             @Override
             public void onFailure(Call<Data> call, Throwable t) {
-
+                boolean isFail = true;
             }
         });
 
         // Bookmarked
-        apiGetUsers.getUsers("picture",5).enqueue(new Callback<Data>() {
+        final int results3 = 3;
+        apiGetUsers.getUsers("picture",results3).enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
-                Data body = response.body();
-                List<Result> result = body.getResults();
-                if (response.isSuccessful()) {
-                    bookmarkedRecyclerView.setLayoutManager(new GridLayoutManager( MainActivity.this, 5));
-                    adapter = new RecycleViewAdapter(MainActivity.this,result);
-                    bookmarkedRecyclerView.setAdapter(adapter);
-
+                if(response.isSuccessful()) {
+                    setUsers(response, bookmarkedRecyclerView);
+                }
+                else {
+                    Log.println(Log.ERROR,"error","error bookmarked");
                 }
             }
-
             @Override
             public void onFailure(Call<Data> call, Throwable t) {
-
+                boolean isFail = true;
             }
         });
 
     }
 
-    private void SetGridLayout() {
+    private void setUsers(Response<Data> response, RecyclerView recycler) {
+        Data body = response.body();
 
+        List<Result> result = body.getResults();
+        int amountResults = body.getResults().size();
+
+        recycler.setLayoutManager(new GridLayoutManager(MainActivity.this, getAmountCols(amountResults)));
+        adapter = new RecycleViewAdapter(MainActivity.this, result);
+        recycler.setAdapter(adapter);
+    }
+
+    private int  getAmountCols(int amountResults) {
+        int spanCols = (int) Math.ceil(amountResults/ (double) MAX_ROWS);
+        return (spanCols < MAX_COLUMNS_IN_SCREEN)?
+                MAX_COLUMNS_IN_SCREEN : spanCols;
 
     }
+
+
 
 }

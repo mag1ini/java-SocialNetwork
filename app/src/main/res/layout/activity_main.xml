@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sv"
@@ -25,7 +24,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginEnd="20dp">
-<!--                android:background="@color/colorAqua">-->
 
                 <TextView
                     android:id="@+id/title_tv"
@@ -36,6 +34,7 @@
                     android:textColor="@color/colorTitle"
                     android:textSize="40sp"
                     android:textStyle="bold" />
+
             </RelativeLayout>
 
 
@@ -47,7 +46,6 @@
                 android:layout_below="@id/mainTitle_layout"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp">
-<!--                android:background="@color/colorPrimaryDark">-->
 
                 <TextView
                     android:id="@+id/hosts_tv"
@@ -70,22 +68,22 @@
                     android:textColor="@color/colorTitleBtn"
                     android:textSize="18sp" />
             </RelativeLayout>
+
+
             <!-- List of Hosts  -->
             <HorizontalScrollView
-                android:layout_below="@id/hostsTitle_layout"
                 android:id="@+id/hosts_hs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hostsTitle_layout">
 
                 <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/hosts_recycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-              
+                    android:id="@+id/hosts_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
             </HorizontalScrollView>
+
 
             <!--Tilda -->
             <TextView
@@ -111,7 +109,6 @@
                 android:layout_below="@id/tilda1"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp">
-<!--                android:background="@color/colorPrimaryDark">-->
 
                 <TextView
                     android:id="@+id/travellers_tv"
@@ -133,13 +130,16 @@
                     android:text="@string/viewAll"
                     android:textColor="@color/colorTitleBtn"
                     android:textSize="18sp" />
+
             </RelativeLayout>
+
+
             <!-- List of Travellers  -->
             <HorizontalScrollView
-                android:layout_below="@id/travellersTitle_layout"
                 android:id="@+id/travellers_hs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/travellersTitle_layout">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/travellers_recycler"
@@ -147,6 +147,8 @@
                     android:layout_height="wrap_content" />
 
             </HorizontalScrollView>
+
+
             <!--Tilda -->
             <TextView
                 android:id="@+id/tilda2"
@@ -171,7 +173,6 @@
                 android:layout_below="@id/tilda2"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="20dp">
-<!--                android:background="@color/colorPrimaryDark">-->
 
                 <TextView
                     android:id="@+id/bookmarked_tv"
@@ -193,32 +194,41 @@
                     android:text="@string/viewAll"
                     android:textColor="@color/colorTitleBtn"
                     android:textSize="18sp" />
+
             </RelativeLayout>
+
+
             <!-- List of Bookmarked  -->
             <HorizontalScrollView
-                android:layout_below="@id/bookmarkedTitle_layout"
                 android:id="@+id/bookmarked_hs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bookmarkedTitle_layout">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/bookmarked_recycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+<!--                </LinearLayout>-->
 
             </HorizontalScrollView>
 
 
+            <!-- Invites Card -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_cv"
-                app:cardCornerRadius="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/bookmarked_hs"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="90dp"
                 android:layout_marginEnd="20dp"
-                app:cardBackgroundColor="@color/colorCard">
+                android:layout_marginBottom="90dp"
+                app:cardBackgroundColor="@color/colorCard"
+                app:cardCornerRadius="10dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -228,15 +238,15 @@
                     <TextView
                         android:id="@+id/titleCard_tv"
                         android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:textAlignment="center"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="30dp"
+                        android:gravity="center"
                         android:text="@string/invites_title"
+                        android:textAlignment="center"
                         android:textColor="@color/colorTitleCard"
                         android:textSize="47sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/bodyCard_tv"
@@ -250,7 +260,7 @@
                         android:paddingRight="10dp"
                         android:text="@string/invites_body"
                         android:textColor="@color/colorTitleCard"
-                        android:textSize="19sp"/>
+                        android:textSize="19sp" />
 
                     <Button
                         android:id="@+id/btnCarh_btn"
@@ -267,16 +277,11 @@
                         android:textColor="@color/colorBtnCard"
                         android:textSize="27sp" />
                 </RelativeLayout>
-                <!--            <TextView-->
-                <!--                android:layout_width="100dp"-->
-                <!--                android:layout_height="match_parent"-->
-                <!--                android:text="@string/invites_title"-->
-                <!--                android:textSize="30sp">-->
 
-                <!--            </TextView>-->
             </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
+
     </ScrollView>
 
 
@@ -343,7 +348,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_editor_absoluteX="100dp" />
 
-
             <Button
                 android:id="@+id/user_btn"
                 android:layout_width="30dp"
@@ -360,7 +364,6 @@
                 app:layout_editor_absoluteX="120dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     </RelativeLayout>
 
